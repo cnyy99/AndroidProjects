@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Beer Adivser</string>
+    <string name="find_beer">find_beer</string>
+    <string name="brands">No beer seclected</string>
+    <string-array name="beer_coclors">
+        <item>light</item>
+        <item>amber</item>
+        <item>brown</item>
+        <item>dark</item>
+    </string-array>
+</resources>
