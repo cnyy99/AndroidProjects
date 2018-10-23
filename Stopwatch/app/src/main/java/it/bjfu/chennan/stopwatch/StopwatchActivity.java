@@ -11,7 +11,7 @@ import java.util.Locale;
 public class StopwatchActivity extends Activity {
     private int seconds = 0;
     private boolean running;
-
+    private boolean wasRunning;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class StopwatchActivity extends Activity {
         {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
         runTimer();
     }
@@ -28,9 +29,35 @@ public class StopwatchActivity extends Activity {
     {
         savedInstanceState.putInt("seconds",seconds);
         savedInstanceState.putBoolean("running",running);
+        savedInstanceState.putBoolean("wasRunning",wasRunning);
     }
-    {
-
+    @Override
+    public void onStop(){
+        super.onStop();
+//        wasRunning = running;
+        running = false;
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+        if (wasRunning)
+        {
+            running = true;
+        }
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        wasRunning = running;
+        running = false;
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (wasRunning)
+        {
+            running = true;
+        }
     }
 //    class MyRunable implements Runnable{
 //        @Override
