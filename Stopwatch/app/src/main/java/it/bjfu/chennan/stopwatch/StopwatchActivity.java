@@ -1,6 +1,7 @@
 package it.bjfu.chennan.stopwatch;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -75,6 +76,11 @@ public class StopwatchActivity extends Activity {
 //            handler.postDelayed(this ,1000);
 //        }
 //    }
+    public void onClickdialog(android.view.View view)
+    {
+        Intent intent = new Intent(this,CustomDialogActivity.class);
+        startActivity(intent);
+    }
     private void runTimer()
     {
         final TextView timeview = (TextView)findViewById(R.id.time_view);
