@@ -23,8 +23,8 @@ public class CreateMessageActivity extends Activity {
         intent1.setType("text/plain");
         intent1.putExtra(intent1.EXTRA_TEXT,messageText);
 
-//        Intent intent = new Intent(this,ReceiveMessageActivity.class);
-//        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE,messageText);
+        Intent intent = new Intent(this,ReceiveMessageActivity.class);
+        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE,messageText);
         startActivity(intent1);
 
     }

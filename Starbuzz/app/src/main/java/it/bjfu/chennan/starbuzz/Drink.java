@@ -4,6 +4,7 @@ public class Drink {
     private String name;
     private String description;
     private int imageResourceId;
+
     public static final Drink[] drinks = new Drink[]{
             new Drink("Lattle", "A couple of espresso with steamed milk", R.drawable.latte),
             new Drink("cappuccino", "Espresso, hot milk, and a steamed milk foam.", R.drawable.cappuccino),
