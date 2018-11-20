@@ -13,15 +13,32 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="185dp"
+            android:layout_height="121dp"
+            android:contentDescription="stasfas"
             android:src="@drawable/starbuzz_logo" />
 
         <ListView
             android:id="@+id/list_options"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:entries="@array/options" />
+            android:layout_height="wrap_content"
+            android:entries="@array/options">
+
+        </ListView>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <ListView
+            android:id="@+id/list_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
