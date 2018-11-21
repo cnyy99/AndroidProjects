@@ -15,6 +15,6 @@ public class MainActivity extends Activity {
 
     public void onClick(View view) {
         Intent intent=new Intent(this,WombleService.class);
-        startActivity(intent);
+        startService(intent);
     }
 }
