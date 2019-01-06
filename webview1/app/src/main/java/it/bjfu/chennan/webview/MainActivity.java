@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.Toast;
 
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         webView = (WebView) findViewById(R.id.webview1);
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("http://192.168.1.100:8080/index");//http://115.28.165.3:8080/app/UserPage.jsp
+        webView.loadUrl("http://192.168.1.102:8080/index");//http://115.28.165.3:8080/app/UserPage.jsp
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -54,8 +53,9 @@ public class MainActivity extends Activity {
                 return true;
             } else {
                 if (!mBackKeyPressed) {
-
                     mBackKeyPressed = true;
+                    Toast toast= Toast.makeText(this,"再次按返回键退出程序",Toast.LENGTH_SHORT);
+                    toast.show();
                     new Timer().schedule(new TimerTask() {
 
                         @Override
